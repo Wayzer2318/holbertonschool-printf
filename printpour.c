@@ -7,7 +7,8 @@
  *
  * Return: char
  */
-void printpour(char c)
+void printpour(va_list arg)
 {
-	return (write(1, "%", 1));
+	(void) write(1, "%", 1));
+	return (1);
 }

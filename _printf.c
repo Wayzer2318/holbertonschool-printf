@@ -8,11 +8,11 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
-	if (format == 'NULL')
+	if (format == NULL)
 		return (-1);
 	while (*format != '\0')
 	{
-		if (*format =! '%')
+		if (*format != '%')
 		{
 			counter =+ _putchar(*format);
 			format++;
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				counter += _putchar(va_arg(arg, int));
 				break;
 			case 's':
-				counter += _puts(va_arg(arg, char));
+				counter += _puts(va_arg(arg, char*));
 				break;
 			case '%':
 				counter += _putchar(*format);

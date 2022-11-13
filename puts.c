@@ -4,19 +4,19 @@
 /**
  * puts - function that print a string
  *
- * @str: String to print
+ * @s: String to print
  *
  * Return: void
  */
 
-void _puts(char *str)
+int _puts(char *s)
 {
-	for (str != '\0'; str++)
+	int count = 0;
+
+	while (*s != '\0')
 	{
-		_putchar(*str);
+		count += _putchar(*s);
+		s++;
 	}
-
-	_putchar('\n');
+		return (count);
 }
-	
-

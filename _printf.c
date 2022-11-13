@@ -23,10 +23,13 @@ int _printf(const char *format, ...)
 		switch(*format)
 		{
 			case 'c':
+				counter += _putchar(va_arg(arg, int));
 				break;
 			case 's':
+				counter += _puts(va_arg(arg, char));
 				break;
 			case '%':
+				counter += _putchar(*format);
 				break;
 			default:
 				while (format != '%')

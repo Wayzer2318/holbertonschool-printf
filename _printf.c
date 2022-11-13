@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				counter += _putchar(*format);
 				break;
 			default:
-				while (format != '%')
+				while (*format != '%')
 				{
 					format--;
 					counter += _putchar(*format);

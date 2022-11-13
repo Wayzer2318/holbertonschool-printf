@@ -4,15 +4,39 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int len;
+	int counter = 0;
 
-	print_t prnt[] = {
-		{"c", _putchar},
-		{"s", puts},
-		{"%", printpour},
-		{NULL,NULL}
-	};
+	va_start(arg, format);
 
-	if (format == NULL)
-		return(-1);
+	if (format == 'NULL')
+		return (-1);
+	while (*format != '\0')
+	{
+		if (*format =! '%')
+		{
+			counter =+ _putchar(*format);
+			format++;
+			continue;
+		}
+		format++;
+
+		switch(*format)
+		{
+			case 'c':
+				break;
+			case 's':
+				break;
+			case '%':
+				break;
+			default:
+				while (format != '%')
+				{
+					format--;
+					counter += _putchar(*format);
+				}
+		}
+		format++;
+	}
+	va_end(arg);
+	return (counter);
 }

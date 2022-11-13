@@ -35,7 +35,9 @@ int _printf(const char *format, ...)
 			default:
 				while (*format != '%')
 					format--;
-				counter += _putchar(*format);
+				/**
+				* counter += _putchar(*format);
+				*/
 		}
 		format++;
 	}
